@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .element {
+            width: 50px;
+            height: 50px;
+            border-radius: 20px;
+
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .space-x-10 {
+            margin: 0px 100px;
+        }
+
+        .color-red {
+            border: 1px solid red;
+        }
+
+        .color-yellow {
+            border: 1px solid yellow;
+        }
+
+        .color-green {
+            border: 1px solid green;
+        }
+
+        .color-pink {
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="space-x-10">
+        <div class="flex" id="bx">
+            
+            <script>
+                let i = 0;
+                colors = [
+                    "red", "yellow", "green", "pink"
+                ]
+                let ars = [1,2,1,4]
+                while (i != colors.length) {
+                    document.write(`<div class="element flex color-${colors[i]} element-${i}">${ars[i]}</div>`)
+                    i++;
+                } 
+                const sortData = (ars , element) => {
+                    
+                    ars.sort()
+                    console.log(ars);
+                    ars.map((e , i) => {
+                        let originalElement = document.getElementsByClassName("element")[i]
+                        console.log(originalElement);
+                        originalElement.innerHTML = e
+
+                    })
+                }
+                const bx = document.getElementById("bx")
+            
+            </script>
+            <button onclick="sortData(ars , bx)">Sort</button>
+        </div>
+    </div>
+</body>
+
+</html>
